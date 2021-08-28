@@ -4,9 +4,193 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-    
+    <header>
+        <div class="logo">
+            <h1><a href="/">JobsNet</a></h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Inicial</a></li>
+                <li><a href="#">Vagas</a></li>
+                <li><a href="#">Curriculum</a></li>
+            </ul>
+            <img src="img/menu.png" class="burger-menu">
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Informe seus dados</h2>
+                <div class="title-decoration"></div>
+                </div>
+                <div class="intro-texto">
+                    A JobsNet tem a vaga ideal para seu curriculum
+                </div>
+            </article>
+        </section>
+
+        <section class="formulario">
+            <h3>Cadastre o seu curriculum no formulário abaixo:</h3>
+            <form action="/add" id="cv_form">
+                <div class="form-row">
+                    <fieldset>
+                        <label for="name">Nome Completo:<span>*</span>
+                        </label>
+                        <input type="text" for="name" id="name" name="nome" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="cargo">Vaga Pretendida:<span>*</span>
+                        </label>
+                        <input type="text" for="cargo" id="cargo" name="cargo" placeholder="Ex: Analista de dados" required>
+                    </fieldset>
+                </div>
+
+                <div class="form-row">
+                    <fieldset>
+                        <label for="nascimento"> Data de Nascimento:<span>*</span>
+                        </label>
+                        <input type="date" for="nascimento" id="nascimento" name="dataNasc" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="estado-civil"> Estado Civil:
+                        </label>
+                        <select name="estadoCivil">
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="separado">Separado(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                            <option value="união estável">união estável</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="name"> Sexo:
+                        </label>
+                        <select name="sexo">
+                            <option label="" disabled selected value>Escolha uma opção:</option>
+                            <option value="fem">Feminino</option>
+                            <option value="masc">Masculino</option>
+                            <option value="outro">Outro</option>
+                            <option value="nao-informado">Prefiro não informar</option>
+                        </select>
+                    </fieldset>
+
+
+                </div>
+
+                <div class="form-row">
+
+                    <fieldset class="cep">
+                        <label for="cep"> CEP:<span>*</span>
+                        </label>
+                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" placeholder="Ex: 00000-000"
+                            onblur="pesquisacep(this.value);">
+                    </fieldset>
+
+                    <fieldset class="rua">
+                        <label for="rua"> Endereço:<span>*</span>
+                        </label>
+                        <input type="address" for="rua" id="rua" name="rua" required>
+                    </fieldset>
+
+                    <fieldset class="numero">
+                        <label for="numero">Número<span>*</span>
+                        </label>
+                        <input type="number" for="numero" id="numero" name="numero" required>
+                    </fieldset>
+
+                </div>
+
+                <div class="form-row">
+                    <fieldset>
+                        <label for="bairro"> Bairro:<span>*</span>
+                        </label>
+                        <input type="address" for="bairro" id="bairro" name="bairro" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="cidade"> Cidade:<span>*</span>
+                        </label>
+                        <input type="address" for="cidade" id="cidade" name="cidade" required>
+                    </fieldset>
+
+                    <fieldset class="estado">
+                        <label for="uf" >Estado:<span>*</span>
+                        </label>
+                        <input type="address" for="uf" id="uf" name="estado" required>
+                    </fieldset>
+
+                </div>
+
+                <div class="form-row">
+                    <fieldset class="email">
+                        <label for="email"> Email:<span>*</span>
+                        </label>
+                        <input type="email" for="email" id="email" name="email" placeholder="Ex: exemplo@exemplo.com" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="celular"> Celular:<span>*</span>
+                        </label>
+                        <input type="phone" for="celular" id="celular" name="celular" placeholder="Ex: (00) 00000-0000" required>
+                    </fieldset>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <fieldset>
+                        <label for="tel-1"> Telefone Fixo 1:
+                        </label>
+                        <input type="phone" for="tel-1" id="tel-1" name="tel1" placeholder="Ex: 0000-0000">
+
+                    </fieldset>
+                    <fieldset>
+                        <label for="tel-2"> Telefone Fixo 2:
+                        </label>
+                        <input type="phone" for="tel-2" id="tel-2" name="tel2" placeholder="Ex: 0000-0000">
+                    </fieldset>
+                    
+                </div>
+
+                <div class="form-row">
+                    <fieldset>
+                        <label for="id"> Identidade:
+                        </label>
+                        <input type="" for="id" id="id" name="identidade">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="cpf"> CPF:<span>*</span>
+                        </label>
+                        <input type="text" for="cpf" id="cpf" name="cpf" maxlength="14" placeholder="Ex: 000.000.000-00" required onkeydown="javascript: fMasc(this, mCPF)" oninput="ValidaCPF()";>
+                        <span id="erro-cpf"></span>
+                    </fieldset>
+                </div>
+
+                <div class="form-row">
+                    <fieldset>
+                        <label for="id"> Categoria CNH:
+                        </label>
+                        <input type="text" for="id" id="id" name="Categoria CNH">
+                    </fieldset>
+                </div>
+                <button type="submit" id="submit-btn"><i style="margin-right: 5px;"></i>Enviar</button>
+            </form>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="script.js"></script> 
+
 </body>
+
 </html>
